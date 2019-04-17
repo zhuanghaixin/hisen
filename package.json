@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/zhuanghaixin/hisen/issues"
   },
-  "homepage": "https://github.com/zhuanghaixin/hisen#readme"
+  "homepage": "https://github.com/zhuanghaixin/hisen#readme",
+  "dependencies": {
+    "vue": "^2.6.10"
+  }
 }
