@@ -5,6 +5,7 @@
             <!--<use :xlink:href=`#icon-${icon}`></use>-->
         <!--</svg>-->
         <g-icon v-if="icon" :name="icon" class="icon"></g-icon>
+        <g-icon class="loading" name="loading"></g-icon>
         <div class="content">
         <slot></slot>
         </div>
@@ -29,6 +30,14 @@
 </script>
 
 <style lang="scss">
+    @keyframes btn-spin {
+        0%{
+            transform: rotate(0deg);
+        }
+        100%{
+            transform: rotate(360deg);
+        }
+    }
     .g-button {
         font-size: var(--font-size);height: var(--button-height);padding: 0 1em;border-radius: var(--border-radius);border: 1px solid var(--border-color);   background: var(--button-bg);
         //flex布局
@@ -63,6 +72,10 @@
             >.content{
                 order:1;
             }
+        }
+        //圆圈加载
+        .loading{
+            animation: btn-spin 2s infinite linear;
         }
 
 
