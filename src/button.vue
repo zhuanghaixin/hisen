@@ -1,11 +1,12 @@
 <template>
 
-    <button class="g-button" :class="{[`icon-${iconPosition}`]:true}">
+    <button class="g-button" :class="{[`icon-${iconPosition}`]:true}"
+    @click="handleLoading">
         <!--<svg  v-if="icon" class="icon" aria-hidden="true">-->
             <!--<use :xlink:href=`#icon-${icon}`></use>-->
         <!--</svg>-->
-        <g-icon v-if="icon" :name="icon" class="icon"></g-icon>
-        <g-icon class="loading" name="loading"></g-icon>
+        <g-icon v-if="icon &&!loading" :name="icon" class="icon"></g-icon>
+        <g-icon class="loading icon" name="loading" v-if="loading"></g-icon>
         <div class="content">
         <slot></slot>
         </div>
@@ -22,10 +23,19 @@
                 type:String,
                 default:'left',
                 validator(value){
-                    console.log(value);
+                    // console.log(value);
                     return value === 'left' || value === 'right' ;
                 }
-            }}
+            },
+            loading:{
+                type:Boolean
+            }
+        },
+        methods:{
+            handleLoading(){
+                this.$emit('change')
+            }
+        }
     }
 </script>
 

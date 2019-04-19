@@ -39,13 +39,13 @@
 </style>
 <body>
 <div id="app">
-    <g-button>
+    <g-button :loading="loading1" @change="loading1=!loading1">
         设置
     </g-button>
-    <g-button icon="setting" icon-position="left">
+    <g-button icon="setting" icon-position="left" :loading="loading2"  @change="loading2=!loading2">
         设置
     </g-button>
-    <g-button icon="setting" icon-position="right">
+    <g-button icon="setting" icon-position="right" :loading="loading3"  @change="loading3=!loading3">
         设置
     </g-button>
 
