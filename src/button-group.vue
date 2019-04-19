@@ -1,15 +1,17 @@
 <template>
-    <div class="g-button-group"><slot></slot></div>
+    <div class="g-button-group">
+        <slot></slot>
+    </div>
 </template>
 
 <script>
     export default {
         name: "button-group",
-        mounted(){
+        mounted() {
             console.log(1)
             console.log(this.$el.children);
-            for(let node of this.$el.children){
-                if(node.nodeName.toLowerCase()!=='button'){
+            for (let node of this.$el.children) {
+                if (node.nodeName.toLowerCase() !== 'button') {
                     console.warn(`g-button-group的子元素应该是g-button,而你的子元素是${node.nodeName.toLowerCase()}`)
                 }
             }
@@ -18,26 +20,27 @@
 </script>
 
 <style lang="scss">
-    .g-button-group{
+    .g-button-group {
         display: inline-flex;
         vertical-align: middle;
-        >.g-button{
+        > .g-button {
             border-radius: 0px;
-            margin-left: -1px;
-            &:first-child{
-                border-top-left-radius:var(--border-radius) ;
-                border-bottom-left-radius:var(--border-radius) ;
+            &:not(:first-child) {
+                margin-left: -1px;
             }
-            &:last-child{
-                border-top-right-radius:var(--border-radius) ;
-                border-bottom-right-radius:var(--border-radius) ;
+            &:first-child {
+                border-top-left-radius: var(--border-radius);
+                border-bottom-left-radius: var(--border-radius);
             }
-            &:hover{
+            &:last-child {
+                border-top-right-radius: var(--border-radius);
+                border-bottom-right-radius: var(--border-radius);
+            }
+            &:hover {
                 position: relative;
                 z-index: 1;
             }
         }
-
 
     }
 
