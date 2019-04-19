@@ -6,13 +6,23 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>hisen——VUE UI组件库</title>
+
 </head>
 <style>
-    *{
+    * {
         padding: 0;
         margin: 0;
         box-sizing: border-box;
     }
+
+    .icon {
+        width: 1em;
+        height: 1em;
+        vertical-align: -0.15em;
+        fill: currentColor;
+        overflow: hidden;
+    }
+
     :root {
         --button-height: 32px;
         --font-size: 14px;
@@ -23,16 +33,38 @@
         --border-color: #999;
         --border-color-hover: #666;
     }
-    #app{
+
+    #app {
         margin: 20px;
     }
-    body{
+
+    body {
         font-size: var(--font-size);
     }
 
 </style>
 <body>
-<div id="app">你好<g-button></g-button></div>
+<div id="app">
+    <g-button>
+        设置
+        <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-setting"></use>
+        </svg>
+    </g-button>
+    <g-button>
+        设置
+    </g-button>
+    <g-button icon="setting">
+        设置
+    </g-button>
+    <g-button icon="setting" icon-position="right">
+        设置
+    </g-button>
+
+
+
+</div>
 <script src="./src/app.js"></script>
+<script src="//at.alicdn.com/t/font_1151469_fciinh2da95.js"></script>
 </body>
 </html>
