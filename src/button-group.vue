@@ -4,7 +4,16 @@
 
 <script>
     export default {
-        name: "button-group"
+        name: "button-group",
+        mounted(){
+            console.log(1)
+            console.log(this.$el.children);
+            for(let node of this.$el.children){
+                if(node.nodeName.toLowerCase()!=='button'){
+                    console.warn(`g-button-group的子元素应该是g-button,而你的子元素是${node.nodeName.toLowerCase()}`)
+                }
+            }
+        }
     }
 </script>
 
