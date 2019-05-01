@@ -1,7 +1,7 @@
 # hisen
 <h2 align="center">一个基于Vue的UI组件库</h2>
 
-![Build Status](https://travis-ci.org/zhuanghaixin/hisen.svg?branch=master)](https://travis-ci.org/zhuanghaixin/hisen
+[![Build Status](https://travis-ci.org/zhuanghaixin/hisen.svg?branch=master)](https://travis-ci.org/zhuanghaixin/hisen)
 ![LISENCE](https://img.shields.io/npm/l/express.svg)
 
 # 介绍（Introduction)
