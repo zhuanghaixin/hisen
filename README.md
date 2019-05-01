@@ -1,7 +1,9 @@
 # hisen
 <h2 align="center">一个基于Vue的UI组件库</h2>
-![Build Status](https://travis-ci.org/zhuanghaixin/hisen.svg?branch=master)](https://travis-ci.org/zhuanghaixin/hisen)
-[](https://img.shields.io/npm/l/express.svg)
+
+![Build Status](https://travis-ci.org/zhuanghaixin/hisen.svg?branch=master)](https://travis-ci.org/zhuanghaixin/hisen
+![LISENCE](https://img.shields.io/npm/l/express.svg)
+
 # 介绍（Introduction)
 # 开始使用 （Usage)
 ## 1.安装（Installation)
@@ -10,7 +12,7 @@
 *{
     box-sizing:boder-box;
  }
-```˚
+```
 # 文档 (Documentation)
 # 提问（Questions）
 # 问题（Issue)
