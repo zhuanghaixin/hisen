@@ -3,7 +3,7 @@
 
 [![Build Status](https://travis-ci.org/zhuanghaixin/hisen.svg?branch=master)](https://travis-ci.org/zhuanghaixin/hisen)
 ![LISENCE](https://img.shields.io/npm/l/express.svg)
-
+![npm](https://img.shields.io/npm/v/npm.svg)
 ## 介绍（Introduction)
 ## 开始使用 （Usage)
 ### 1.安装（Installation)
