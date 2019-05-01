@@ -1,5 +1,5 @@
 # hisen
-<div align="center"一个基于Vue的UI组件库</div>
+<div align="center">一个基于Vue的UI组件库</div>
 [![Build Status](https://travis-ci.org/zhuanghaixin/hisen.svg?branch=master)](https://travis-ci.org/zhuanghaixin/hisen)
 
 # 介绍（Introduction)
