@@ -1,6 +1,6 @@
 # hisen
-<div align="center">一个基于Vue的UI组件库</div>
-[![Build Status](https://travis-ci.org/zhuanghaixin/hisen.svg?branch=master)](https://travis-ci.org/zhuanghaixin/hisen)
+<h2 align="center">一个基于Vue的UI组件库</h2>
+![Build Status](https://travis-ci.org/zhuanghaixin/hisen.svg?branch=master)](https://travis-ci.org/zhuanghaixin/hisen)
 
 # 介绍（Introduction)
 # 开始使用 （Usage)
