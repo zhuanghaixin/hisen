@@ -19,5 +19,8 @@
 ## 更新日志(Changelog)
 ## 保持联系（Stay In Touch）
 ## 贡献（Contribution)
-- [hisen](https://github.com/zhuanghaixin)
+- [Hisen](https://github.com/zhuanghaixin)
 ## 执照（License）
+[MIT](http://opensource.org/licenses/MIT)
+
+Copyright (c) 2019-present, Haixing (Hisen) Zhuang
