@@ -6,7 +6,7 @@
 
 <script>
     export default {
-        name: "button-group",
+        name: "hisen-button-group",
         mounted() {
             console.log(1)
             console.log(this.$el.children);
@@ -19,7 +19,7 @@
     }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
     .g-button-group {
         display: inline-flex;
         vertical-align: middle;

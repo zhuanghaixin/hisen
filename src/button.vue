@@ -1,64 +1,66 @@
 <template>
 
     <button class="g-button" :class="{[`icon-${iconPosition}`]:true}"
-    @click="handleLoading">
+            @click="handleLoading">
         <!--<svg  v-if="icon" class="icon" aria-hidden="true">-->
-            <!--<use :xlink:href=`#icon-${icon}`></use>-->
+        <!--<use :xlink:href=`#icon-${icon}`></use>-->
         <!--</svg>-->
         <g-icon v-if="icon &&!loading" :name="icon" class="icon"></g-icon>
         <g-icon class="loading icon" name="loading" v-if="loading"></g-icon>
         <div class="content">
-        <slot></slot>
+            <slot></slot>
         </div>
     </button>
 
 </template>
 
 <script>
-    import  Icon from './icon'
+    import Icon from './icon'
+
     export default {
-        name: "btn",
-        components:{
-            'g-icon':Icon
+        name: "hisen-button",
+        components: {
+            'g-icon': Icon
         },
-        props:{
-            icon:{},
-            iconPosition:{
-                type:String,
-                default:'left',
-                validator(value){
+        props: {
+            icon: {},
+            iconPosition: {
+                type: String,
+                default: 'left',
+                validator(value) {
                     // console.log(value);
-                    return value === 'left' || value === 'right' ;
+                    return value === 'left' || value === 'right';
                 }
             },
-            loading:{
-                type:Boolean
+            loading: {
+                type: Boolean
             }
         },
-        methods:{
-            handleLoading(){
+        methods: {
+            handleLoading() {
                 this.$emit('change')
             }
         }
     }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
     @keyframes btn-spin {
-        0%{
+        0% {
             transform: rotate(0deg);
         }
-        100%{
+        100% {
             transform: rotate(360deg);
         }
     }
+
     .g-button {
-        font-size: var(--font-size);height: var(--button-height);padding: 0 1em;border-radius: var(--border-radius);border: 1px solid var(--border-color);   background: var(--button-bg);
+        font-size: var(--font-size);height: var(--button-height);padding: 0 1em;border-radius: var(--border-radius);border: 1px solid var(--border-color); background: var(--button-bg);
         //flex布局
         display: inline-flex;justify-content: center;align-items: center;
         //文本对不齐
         vertical-align: top;
-     //按钮状态
+        //按钮状态
         &:hover {
             border-color: var(--border-color-hover);
         }
@@ -69,30 +71,28 @@
             outline: none;
         }
         //默认icon位置
-        >.icon{
+        > .icon {
             order: 1;
             margin-right: .3em;
         }
-        >.content{
-            order:2;
+        > .content {
+            order: 2;
         }
         //icon-right位置
-        &.icon-right{
-            >.icon{
+        &.icon-right {
+            > .icon {
                 order: 2;
                 margin-right: 0;
                 margin-left: .3em;
             }
-            >.content{
-                order:1;
+            > .content {
+                order: 1;
             }
         }
         //圆圈加载
-        .loading{
+        .loading {
             animation: btn-spin 2s infinite linear;
         }
-
-
 
     }
 

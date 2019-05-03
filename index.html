@@ -35,10 +35,22 @@
     body {
         font-size: var(--font-size);
     }
+    .box{
+        margin: 20px;
+    }
 
 </style>
 <body>
 <div id="app">
+    <div class="box">
+    <g-input value="正常状态"></g-input>
+    <g-input value="禁止状态" :disabled="true"></g-input>
+    <g-input value="只读状态" :readonly="true"></g-input>
+    </div>
+    <div class="box">
+        <g-input value="张三" error="姓名不能少于两个字"></g-input>
+    </div>
+    <div class="box">
     <g-button :loading="loading1" @change="loading1=!loading1">
         设置
     </g-button>
@@ -52,13 +64,12 @@
         <g-button icon="left">上一页</g-button>
         <g-button>更多</g-button>
         <g-button icon="right" icon-position="right">下一页</g-button>
-
     </g-button-group>
+    </div>
 
-<div id="test"></div>
 
 </div>
 <script src="./src/app.js"></script>
-<script src="//at.alicdn.com/t/font_1151469_mpzt27d1mxk.js"></script>
+<script src="//at.alicdn.com/t/font_1151469_bn3fk0u78i5.js"></script>
 </body>
 </html>
