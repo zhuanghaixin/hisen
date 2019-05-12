@@ -1,6 +1,6 @@
 <template>
     <div class="wrapper" :class="{'error':error}">
-        <input type="text" :value="value" :disabled="disabled" :readonly="readonly">
+        <input type="text" :value="value" :disabled="disabled" :readonly="readonly" @change="handleChange">
         <template v-if="error">
             <g-icon name="error" class="icon-error"></g-icon>
             <span class="errorMessage">{{error}}</span>
@@ -35,6 +35,11 @@
         data() {
             return {
                 values: ''
+            }
+        },
+        methods:{
+            handleChange(){
+                this.$emit('changeinput',event)
             }
         }
     }

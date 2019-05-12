@@ -25,6 +25,7 @@
         props: {
             icon: {},
             iconPosition: {
+
                 type: String,
                 default: 'left',
                 validator(value) {
