@@ -47,17 +47,17 @@
         },
         methods: {
             handleChange() {
-                this.$emit('change', event)
+                this.$emit('change', event.target.value)
             },
             handleInput() {
-                this.$emit('input', event)
+                this.$emit('input', event.target.value)
 
             },
             handleFocus() {
-                this.$emit('focus', event)
+                this.$emit('focus', event.target.value)
             },
             handleBlur() {
-                this.$emit('blur', event)
+                this.$emit('blur', event.target.value)
             }
         }
     }
