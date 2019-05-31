@@ -60,8 +60,51 @@ describe('Input', () => {
         })
     })
     describe('input 事件', () => {
+        const Constructor = Vue.extend(Input)
+        let vm
+        afterEach(function () {
+            vm.$destroy()
+            // runs after each test in this block
+        });
         it('支持 change 事件', () => {
-
+            vm = new Constructor({}).$mount()
+            const callback = sinon.fake();
+            vm.$on('change', callback)
+            //触发input的change 事件
+            let event = new Event('change');
+            let inputElement = vm.$el.querySelector('input')
+            inputElement.dispatchEvent(event)
+            expect(callback).to.have.been.calledWith(event)
+        })
+        it('支持 input 事件', () => {
+            vm = new Constructor({}).$mount()
+            const callback = sinon.fake();
+            vm.$on('input', callback)
+            //触发input的change 事件
+            let event = new Event('input');
+            let inputElement = vm.$el.querySelector('input')
+            inputElement.dispatchEvent(event)
+            expect(callback).to.have.been.calledWith(event)
+        })
+        it('支持 focus 事件', () => {
+            vm = new Constructor({}).$mount()
+            const callback = sinon.fake();
+            vm.$on('focus', callback)
+            //触发input的change 事件
+            let event = new Event('focus');
+            let inputElement = vm.$el.querySelector('input')
+            inputElement.dispatchEvent(event)
+            expect(callback).to.have.been.calledWith(event)
+        })
+        it('支持 blur 事件', () => {
+            vm = new Constructor({}).$mount()
+            const callback = sinon.fake();
+            vm.$on('blur', callback)
+            //触发input的change 事件
+            let event = new Event('blur');
+            let inputElement = vm.$el.querySelector('input')
+            inputElement.dispatchEvent(event)
+            expect(callback).to.have.been.calledWith(event)
         })
     })
 })

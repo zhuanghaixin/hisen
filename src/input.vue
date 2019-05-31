@@ -2,9 +2,9 @@
     <div class="wrapper" :class="{'error':error}">
         <input type="text" :value="value" :disabled="disabled" :readonly="readonly"
                @change="handleChange"
-               @input="handleChange"
-               @focus="handleChange"
-               @blur="handleChange"
+               @input="handleInput"
+               @focus="handleFocus"
+               @blur="handleBlur"
 
 
         >
@@ -17,6 +17,7 @@
 
 <script>
     import Icon from './icon'
+
     export default {
         name: "hisen-input",
         components: {
@@ -44,9 +45,19 @@
                 values: ''
             }
         },
-        methods:{
-            handleChange(){
-                this.$emit('changeinput',event)
+        methods: {
+            handleChange() {
+                this.$emit('change', event)
+            },
+            handleInput() {
+                this.$emit('input', event)
+
+            },
+            handleFocus() {
+                this.$emit('focus', event)
+            },
+            handleBlur() {
+                this.$emit('blur', event)
             }
         }
     }
@@ -66,9 +77,11 @@
         font-size: $font-size;
         display: inline-flex;
         align-items: center;
-        > :not(:last-child){
+
+        > :not(:last-child) {
             margin-right: .5em;
         }
+
         > input {
             height: $height;
             width: $width;
@@ -77,12 +90,15 @@
             border-radius: $border-radius;
             font-size: inherit;
             outline: none;
+
             &:hover {
                 border-color: $border-color-hover
             }
+
             &:focus {
                 box-shadow: inset 0 1px 3px $box-shadow-color;
             }
+
             &[disabled], &[readonly] {
                 color: #333;
                 border-color: #333;
@@ -90,15 +106,18 @@
                 cursor: not-allowed;
             }
         }
-        &.error{
-            >input{
+
+        &.error {
+            > input {
                 border-color: $red;
             }
         }
-        .icon-error{
+
+        .icon-error {
             fill: red;
         }
-        .errorMessage{
+
+        .errorMessage {
             color: red;
         }
 

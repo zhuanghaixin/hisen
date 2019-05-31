@@ -48,7 +48,8 @@
     <g-input value="只读状态" :readonly="true"></g-input>
     </div>
     <div class="box">
-        <g-input value="张三" error="姓名不能少于两个字" @changeinput="inputChange"></g-input>
+        <g-input value="张三" error="姓名不能少于两个字" @change="inputChange"></g-input>
+        <g-input value="王" @change="inputChange"></g-input>
     </div>
     <div class="box">
     <g-button :loading="loading1" @change="loading1=!loading1">
