@@ -1,12 +1,12 @@
 <template>
 
-    <button class="g-button" :class="{[`icon-${iconPosition}`]:true}"
+    <button class="h-button" :class="{[`icon-${iconPosition}`]:true}"
             @click="handleLoading">
         <!--<svg  v-if="icon" class="icon" aria-hidden="true">-->
         <!--<use :xlink:href=`#icon-${icon}`></use>-->
         <!--</svg>-->
-        <g-icon v-if="icon &&!loading" :name="icon" class="icon"></g-icon>
-        <g-icon class="loading icon" name="loading" v-if="loading"></g-icon>
+        <h-icon v-if="icon &&!loading" :name="icon" class="icon"></h-icon>
+        <h-icon class="loading icon" name="loading" v-if="loading"></h-icon>
         <div class="content">
             <slot></slot>
         </div>
@@ -20,7 +20,7 @@
     export default {
         name: "hisen-button",
         components: {
-            'g-icon': Icon
+            'h-icon': Icon
         },
         props: {
             icon: {},
@@ -55,7 +55,7 @@
         }
     }
 
-    .g-button {
+    .h-button {
         font-size: var(--font-size);height: var(--button-height);padding: 0 1em;border-radius: var(--border-radius);border: 1px solid var(--border-color); background: var(--button-bg);
         //flex布局
         display: inline-flex;justify-content: center;align-items: center;

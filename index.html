@@ -43,30 +43,30 @@
 <body>
 <div id="app">
     <div class="box">
-    <g-input value="正常状态"></g-input>
-    <g-input value="禁止状态" :disabled="true"></g-input>
-    <g-input value="只读状态" :readonly="true"></g-input>
-        <g-input value="xx" v-model="message"></g-input>
+    <h-input value="正常状态"></h-input>
+    <h-input value="禁止状态" :disabled="true"></h-input>
+    <h-input value="只读状态" :readonly="true"></h-input>
+        <h-input value="xx" v-model="message"></h-input>
         <p>{{message}}</p>
     </div>
     <div class="box">
-        <g-input value="张三" error="姓名不能少于两个字" @change="inputChange"></g-input>
+        <h-input value="张三" error="姓名不能少于两个字" @change="inputChange"></h-input>
     </div>
     <div class="box">
-    <g-button :loading="loading1" @change="loading1=!loading1">
+    <h-button :loading="loading1" @change="loading1=!loading1">
         设置
-    </g-button>
-    <g-button icon="setting" icon-position="left" :loading="loading2"  @change="loading2=!loading2">
+    </h-button>
+    <h-button icon="setting" icon-position="left" :loading="loading2"  @change="loading2=!loading2">
         设置
-    </g-button>
-    <g-button icon="setting" icon-position="right" :loading="loading3"  @change="loading3=!loading3">
+    </h-button>
+    <h-button icon="setting" icon-position="right" :loading="loading3"  @change="loading3=!loading3">
         设置
-    </g-button>
-    <g-button-group>
-        <g-button icon="left">上一页</g-button>
-        <g-button>更多</g-button>
-        <g-button icon="right" icon-position="right">下一页</g-button>
-    </g-button-group>
+    </h-button>
+    <h-button-group>
+        <h-button icon="left">上一页</h-button>
+        <h-button>更多</h-button>
+        <h-button icon="right" icon-position="right">下一页</h-button>
+    </h-button-group>
     </div>
 
 

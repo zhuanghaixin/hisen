@@ -4,10 +4,10 @@ import Icon from './icon';
 import  Input from './input'
 import ButtonGroup from './button-group'
 
-Vue.component('g-button', Button)
-Vue.component('g-icon', Icon)
-Vue.component('g-button-group', ButtonGroup)
-Vue.component('g-input',Input)
+Vue.component('h-button', Button)
+Vue.component('h-icon', Icon)
+Vue.component('h-button-group', ButtonGroup)
+Vue.component('h-input',Input)
 new Vue({
     el: '#app',
     data: {

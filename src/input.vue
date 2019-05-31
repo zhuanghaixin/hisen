@@ -9,7 +9,7 @@
 
         >
         <template v-if="error">
-            <g-icon name="error" class="icon-error"></g-icon>
+            <h-icon name="error" class="icon-error"></h-icon>
             <span class="errorMessage">{{error}}</span>
         </template>
     </div>
@@ -21,7 +21,7 @@
     export default {
         name: "hisen-input",
         components: {
-            'g-icon': Icon
+            'h-icon': Icon
         },
         props: {
             value: {
