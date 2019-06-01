@@ -8,7 +8,6 @@
     export default {
         name: "hisen-button-group",
         mounted() {
-            console.log(1)
             console.log(this.$el.children);
             for (let node of this.$el.children) {
                 if (node.nodeName.toLowerCase() !== 'button') {
