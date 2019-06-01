@@ -1,13 +1,17 @@
 <template>
-    
+    <div class="h-row">
+        <slot></slot>
+    </div>
 </template>
 
 <script>
     export default {
-        name: "row"
+        name: "hisen-row"
     }
 </script>
 
-<style scoped>
-
+<style scoped lang="scss">
+.h-row{
+    display: flex;
+}
 </style>
