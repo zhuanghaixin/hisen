@@ -1,6 +1,7 @@
 <template>
-    <div class="h-col" :class="[`col-${span}`,`offset-${offset}`]" >
-        <slot></slot>
+    <div class="h-col" :class="[span && `col-${span}`,offset && `offset-${offset}`]" :style="{paddingLeft:gutter/2+'px',paddingRight:gutter/2+'px'}" >
+       <div style="border: 1px solid green;height: 100px">   <slot></slot></div>
+
     </div>
 </template>
 
@@ -15,6 +16,10 @@
             offset:{
                 type:[Number,String],
                 // default:12
+            },
+            gutter:{
+                type:[Number,String],
+                // default:12
             }
         }
     }
@@ -24,8 +29,9 @@
 .h-col{
     height: 100px;
     width: 50%;
-    background: #3D8FEE;
-    border: 1px solid red;
+    /*background: #3D8FEE;*/
+    /*padding: 0 10px;*/
+    /*border: 1px solid red;*/
     $class-prefix: col-;
 
     // loops through 100 times
