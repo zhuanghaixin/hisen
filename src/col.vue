@@ -1,5 +1,5 @@
 <template>
-    <div class="h-col" :class="[`col-${span}`]">
+    <div class="h-col" :class="[`col-${span}`,`offset-${offset}`]" >
         <slot></slot>
     </div>
 </template>
@@ -9,6 +9,10 @@
         name: "hisen-col",
         props:{
             span:{
+                type:[Number,String],
+                // default:12
+            },
+            offset:{
                 type:[Number,String],
                 // default:12
             }
@@ -33,6 +37,19 @@
             // set the background-color to cornflowerblue and
             // each time lighten the color slightly
              //background-color: darken(cornflowerblue, 0% + ($n / 2));
+        }
+    }
+    $class-prefix: offset-;
+
+    // loops through 100 times
+    @for $n from 1 through 24 {
+
+        // for each $col_#{i}
+        &.#{$class-prefix}#{$n} {
+            margin-left: ($n/24)*100%;
+            // set the background-color to cornflowerblue and
+            // each time lighten the color slightly
+            //background-color: darken(cornflowerblue, 0% + ($n / 2));
         }
     }
 }
