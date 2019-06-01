@@ -11,6 +11,15 @@
             gutter:{
                 type:[Number,String]
             }
+        },
+        created() {
+            console.log('row created')
+        },
+        mounted(){
+            console.log('row mounted')
+            this.$children.forEach((vm)=>{
+                vm.gutter=this.gutter
+            })
         }
     }
 </script>
