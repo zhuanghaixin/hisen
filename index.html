@@ -16,7 +16,6 @@
     }
 
 
-
     :root {
         --button-height: 32px;
         --font-size: 14px;
@@ -35,13 +34,81 @@
     body {
         font-size: var(--font-size);
     }
-    .box{
+
+    .box {
         margin: 20px;
     }
 
+    /* 淘宝*/
+
+    .demobox {
+        background-color: grey;
+        height: 80px;
+
+
+    }
+
+    .navbutton {
+        width: 50px !important;
+        height: 30px !important;
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    .logo-wrapper {
+        padding: 10px;
+        display: flex;
+    }
+
+    /* 淘宝*/
 </style>
 <body>
 <div id="app">
+    <!--    淘宝-->
+    <h-row class="topbar">
+        <h-col span="9" class="demobox">
+            <h-row align="left">
+                <h-col class="navbutton">1</h-col>
+                <h-col class="navbutton">2</h-col>
+                <h-col class="navbutton">3</h-col>
+                <h-col class="navbutton">4</h-col>
+            </h-row>
+        </h-col>
+        <h-col span="15" class="demobox">
+            <h-row align="right">
+                <h-col class="navbutton">1</h-col>
+                <h-col class="navbutton">2</h-col>
+                <h-col class="navbutton">3</h-col>
+                <h-col class="navbutton">4</h-col>
+                <h-col class="navbutton">5</h-col>
+                <h-col class="navbutton">6</h-col>
+                <h-col class="navbutton">7</h-col>
+            </h-row>
+        </h-col>
+    </h-row>
+    <h-row gutter="20" class="banner">
+        <h-col span="4" class="demobox"></h-col>
+        <h-col span="20" class="demobox">
+            <h-row gutter="20">
+                <h-col class="demobox">广告</h-col>
+                <h-col class="demobox">广告</h-col>
+                <h-col class="demobox">广告</h-col>
+                <h-col class="demobox">广告</h-col>
+                <h-col class="demobox">广告</h-col>
+            </h-row>
+        </h-col>
+    </h-row>
+    <h-row class="logo-and-search-and-qrcode">
+        <h-col span="4" class="demobox">
+            <div class="logo-wrapper"><img src="https://img.alicdn.com/tfs/TB1UDHOcwoQMeJjy0FoXXcShVXa-286-118.png" alt="" ></div>
+        </h-col>
+        <h-col span="14" class="demobox"></h-col>
+        <h-col span="6" class="demobox"></h-col>
+    </h-row>
+
+    <!--    淘宝-->
     <div class="box" style="border: 1px solid black">
         <h-row>
             <h-col>12</h-col>
@@ -72,19 +139,19 @@
             <h-col span="10" offset="1">10</h-col>
         </h-row>
         <h-row gutter="20">
-            <h-col >8</h-col>
-            <h-col >8</h-col>
-            <h-col >8</h-col>
+            <h-col>8</h-col>
+            <h-col>8</h-col>
+            <h-col>8</h-col>
         </h-row>
-        <h-row gutter="40">˚
-            <h-col >12</h-col>
-            <h-col >12</h-col>
+        <h-row gutter="40">
+            <h-col>12</h-col>
+            <h-col>12</h-col>
         </h-row>
     </div>
     <div class="box">
-    <h-input value="正常状态"></h-input>
-    <h-input value="禁止状态" :disabled="true"></h-input>
-    <h-input value="只读状态" :readonly="true"></h-input>
+        <h-input value="正常状态"></h-input>
+        <h-input value="禁止状态" :disabled="true"></h-input>
+        <h-input value="只读状态" :readonly="true"></h-input>
         <h-input value="xx" v-model="message"></h-input>
         <p>{{message}}</p>
     </div>
@@ -92,20 +159,20 @@
         <h-input value="张三" error="姓名不能少于两个字" @change="inputChange"></h-input>
     </div>
     <div class="box">
-    <h-button :loading="loading1" @change="loading1=!loading1">
-        设置
-    </h-button>
-    <h-button icon="setting" icon-position="left" :loading="loading2"  @change="loading2=!loading2">
-        设置
-    </h-button>
-    <h-button icon="setting" icon-position="right" :loading="loading3"  @change="loading3=!loading3">
-        设置
-    </h-button>
-    <h-button-group>
-        <h-button icon="left">上一页</h-button>
-        <h-button>更多</h-button>
-        <h-button icon="right" icon-position="right">下一页</h-button>
-    </h-button-group>
+        <h-button :loading="loading1" @change="loading1=!loading1">
+            设置
+        </h-button>
+        <h-button icon="setting" icon-position="left" :loading="loading2" @change="loading2=!loading2">
+            设置
+        </h-button>
+        <h-button icon="setting" icon-position="right" :loading="loading3" @change="loading3=!loading3">
+            设置
+        </h-button>
+        <h-button-group>
+            <h-button icon="left">上一页</h-button>
+            <h-button>更多</h-button>
+            <h-button icon="right" icon-position="right">下一页</h-button>
+        </h-button-group>
     </div>
 
 
