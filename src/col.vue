@@ -1,5 +1,5 @@
 <template>
-    <div class="h-col" :class=""
+    <div class="h-col" :class="colClass"
          :style="colStyle">
         <div style="border: 1px solid green;height: 100px">
             <slot></slot>
