@@ -35,8 +35,9 @@
 
             },
             colStyle(){
+                let {gutter}=this
                 return {
-                    paddingLeft:this.gutter/2+'px',paddingRight:this.gutter/2+'px'
+                    paddingLeft:gutter/2+'px',paddingRight:gutter/2+'px'
                 }
             }
         }
