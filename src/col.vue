@@ -9,6 +9,16 @@
 </template>
 
 <script>
+    let validator=(value)=>{
+        let keys = Object.keys(value)
+        let valid = true
+        keys.forEach((key) => {
+            if (!['span', 'offset'].includes(value)) {
+                valid = false
+            }
+        })
+        return valid
+    }
     export default {
         name: "hisen-col",
         props: {
@@ -20,70 +30,21 @@
                 type: [Number, String],
                 // default:12
             },
-            phone: {
-                type: Object,
-                validator(value) {
-                    let keys = Object.keys(value)
-                    let valid = true
-                    keys.forEach((key) => {
-                        if (!['span', 'offset'].includes(value)) {
-                            valid = false
-                        }
-                    })
-                    return valid
-                }
-            },
             ipad: {
                 type: Object,
-                validator(value) {
-                    let keys = Object.keys(value)
-                    let valid = true
-                    keys.forEach((key) => {
-                        if (!['span', 'offset'].includes(value)) {
-                            valid = false
-                        }
-                    })
-                    return valid
-                }
+               validator
             },
             narrowPc: {
                 type: Object,
-                validator(value) {
-                    let keys = Object.keys(value)
-                    let valid = true
-                    keys.forEach((key) => {
-                        if (!['span', 'offset'].includes(value)) {
-                            valid = false
-                        }
-                    })
-                    return valid
-                }
+                validator
             },
             pc: {
                 type: Object,
-                validator(value) {
-                    let keys = Object.keys(value)
-                    let valid = true
-                    keys.forEach((key) => {
-                        if (!['span', 'offset'].includes(value)) {
-                            valid = false
-                        }
-                    })
-                    return valid
-                }
+                validator
             },
             widePc: {
                 type: Object,
-                validator(value) {
-                    let keys = Object.keys(value)
-                    let valid = true
-                    keys.forEach((key) => {
-                        if (!['span', 'offset'].includes(value)) {
-                            valid = false
-                        }
-                    })
-                    return valid
-                }
+                validator
             },
 
         },
@@ -94,15 +55,11 @@
         },
         computed: {
             colClass() {
-                let {span, offset, phone,ipad,narrowPc,pc,widePc} = this
-                let phoneClass = []
+                let {span,offset,ipad,narrowPc,pc,widePc} = this
                 let ipadClass=[]
                 let narrowPcClass=[]
                 let pcClass=[]
                 let widePcClass=[]
-                if (phone) {
-                    phoneClass = [`col-phone-${phone.span}`]
-                }
                 if (ipad) {
                     ipadClass = [`col-ipad-${ipad.span}`]
                 }
@@ -118,7 +75,6 @@
                 return [
                     span && `col-${span}`,
                     offset && `offset-${offset}`,
-                    ...phoneClass,
                     ...ipadClass,
                     ...narrowPcClass,
                     ...pcClass,
@@ -170,32 +126,6 @@
                 // each time lighten the color slightly
                 //background-color: darken(cornflowerblue, 0% + ($n / 2));
             }
-        }
-        @media (max-width: 576px) {
-            height: 100px;
-            width: 50%;
-            /*background: #3D8FEE;*/
-            /*padding: 0 10px;*/
-            /*border: 1px solid red;*/
-            $class-prefix: col-phone-;
-
-            // loops through 100 times
-            @for $n from 1 through 24 {
-
-                // for each $col_#{i}
-                &.#{$class-prefix}#{$n} {
-                    width: ($n/24)*100%;
-                }
-            }
-            $class-prefix: offset-;
-
-            // loops through 100 times
-            @for $n from 1 through 24 {
-                &.#{$class-prefix}#{$n} {
-                    margin-left: ($n/24)*100%;
-                }
-            }
-
         }
         @media (min-width: 577px) {
             height: 100px;
