@@ -42,7 +42,7 @@
 <style scoped lang="scss">
     .h-row {
         display: flex;
-
+        flex-wrap: wrap;
         &.align-left {
             justify-content: flex-start;
         }

@@ -43,6 +43,32 @@
 </style>
 <body>
 <div id="app">
+    <h-row>
+        <h-col span="23" offset="1" :narrow-pc="{span:12,offset:12 }">
+            <div class="demo"></div>
+        </h-col>
+    </h-row>
+    <h-row>
+        <h-col span="24" :ipad="{span:12}" :narrow-pc="{span:8}">
+            <div class="demo"></div>
+        </h-col>
+        <h-col span="24" :ipad="{span:12}" :narrow-pc="{span:8}">
+            <div class="demo"></div>
+        </h-col>
+        <h-col span="24" :ipad="{span:12}" :narrow-pc="{span:8}">
+            <div class="demo"></div>
+        </h-col>
+        <div class="demo"></div>
+        <h-col span="24" :ipad="{span:12}" :narrow-pc="{span:8}">
+        </h-col>
+        <h-col span="24" :ipad="{span:12}" :narrow-pc="{span:8}">
+            <div class="demo"></div>
+        </h-col>
+        <h-col span="24" :ipad="{span:12}" :narrow-pc="{span:8}">
+            <div class="demo"></div>
+        </h-col>
+
+    </h-row>
     <div class="box" style="border: 1px solid black">
         <h-row gutter="20">
             <h-col span="12"
@@ -51,14 +77,16 @@
                    :pc="{span:2}"
                    :wide-pc="{span:1}"
             >
-                2</h-col>
+                2
+            </h-col>
             <h-col span="12"
                    :ipad="{'span':16}"
                    :narrow-pc="{span:20}"
                    :pc="{span:22}"
                    :wide-pc="{span:23}"
             >2
-                2</h-col>
+                2
+            </h-col>
         </h-row>
         <h-row>
             <h-col>12</h-col>

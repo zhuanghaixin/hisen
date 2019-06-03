@@ -9,11 +9,11 @@
 </template>
 
 <script>
-    let validator=(value)=>{
+    let validator = (value) => {
         let keys = Object.keys(value)
         let valid = true
         keys.forEach((key) => {
-            if (!['span', 'offset'].includes(value)) {
+            if (!['span', 'offset'].includes(key)) {
                 valid = false
             }
         })
@@ -32,7 +32,7 @@
             },
             ipad: {
                 type: Object,
-               validator
+                validator
             },
             narrowPc: {
                 type: Object,
@@ -53,34 +53,42 @@
                 gutter: 0
             }
         },
+        methods:{
+            createClasses(obj,str=''){
+                if(!obj){
+                    return []
+                }
+                //obj {span:12,offset:2}
+                //str ipad-,pc-,narrowPc-
+                let array = []
+                if (obj.span) {
+                    array.push(`col-${str}${obj.span}`)
+                }
+                if (obj.offset) {
+                    array.push(`offset-${str}${obj.offset}`)
+                }
+                return array
+            }
+        },
         computed: {
             colClass() {
-                let {span,offset,ipad,narrowPc,pc,widePc} = this
-                let ipadClass=[]
-                let narrowPcClass=[]
-                let pcClass=[]
-                let widePcClass=[]
-                if (ipad) {
-                    ipadClass = [`col-ipad-${ipad.span}`]
-                }
-                if (narrowPc) {
-                    narrowPcClass = [`col-narrow-pc-${narrowPc.span}`]
-                }
-                if (pc) {
-                    pcClass = [`col-pc-${pc.span}`]
-                }
-                if (widePc) {
-                    widePcClass = [`col-wide-pc-${widePc.span}`]
-                }
-                return [
-                    span && `col-${span}`,
-                    offset && `offset-${offset}`,
-                    ...ipadClass,
-                    ...narrowPcClass,
-                    ...pcClass,
-                    ...widePcClass
+                let {span, offset, ipad, narrowPc, pc, widePc} = this
 
+                return [
+                    ...this.createClasses({span,offset}),
+                    ...this.createClasses(ipad,'ipad-'),
+                    ...this.createClasses(narrowPc,'narrowPc-'),
+                    ...this.createClasses(pc,'pc-'),
+                    ...this.createClasses(widePc,'widePc-'),
                 ]
+
+                // span && `col-${span}`,
+                // offset && `offset-${offset}`,
+                // ...(ipad?[`col-ipad-${ipad.span}`]:[]),
+                // ...(narrowPc?[`col-narrow-pc-${narrowPc.span}`]:[]),
+                // ...(pc?[`col-pc-${pc.span}`]:[]),
+                // ...(widePc?[`col-wide-pc-${widePc.span}`]:[])
+
 
             },
             colStyle() {
