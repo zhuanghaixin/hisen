@@ -56,29 +56,41 @@
     }
 
     .h-button {
-        font-size: var(--font-size);height: var(--button-height);padding: 0 1em;border-radius: var(--border-radius);border: 1px solid var(--border-color); background: var(--button-bg);
+        font-size: var(--font-size);
+        height: var(--button-height);
+        padding: 0 1em;
+        border-radius: var(--border-radius);
+        border: 1px solid var(--border-color);
+        background: var(--button-bg);
         //flex布局
-        display: inline-flex;justify-content: center;align-items: center;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
         //文本对不齐
         vertical-align: top;
         //按钮状态
         &:hover {
             border-color: var(--border-color-hover);
         }
+
         &:active {
             background-color: var(--button-active-bg);
         }
+
         &:focus {
             outline: none;
         }
+
         //默认icon位置
         > .icon {
             order: 1;
             margin-right: .3em;
         }
+
         > .content {
             order: 2;
         }
+
         //icon-right位置
         &.icon-right {
             > .icon {
@@ -86,10 +98,12 @@
                 margin-right: 0;
                 margin-left: .3em;
             }
+
             > .content {
                 order: 1;
             }
         }
+
         //圆圈加载
         .loading {
             animation: btn-spin 2s infinite linear;
