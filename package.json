@@ -1,12 +1,14 @@
 {
   "name": "hisen",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "这是一个UI框架",
   "main": "dist/index.js",
   "scripts": {
     "start": "parcel index.html --no-cache",
     "dev-test": "parcel watch test/* --no-cache & karma start",
-    "test": "parcel build test/* --no-minify && karma start --single-run"
+    "test": "parcel build test/* --no-minify && karma start --single-run",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
   },
   "repository": {
     "type": "git",
@@ -24,8 +26,9 @@
   "homepage": "https://github.com/zhuanghaixin/hisen#readme",
   "dependencies": {
     "chai-spies": "^1.0.0",
-    "vue": "^2.6.10",
-    "vue-hot-reload-api": "^2.3.3"
+    "vue": "^2.6.11",
+    "vue-hot-reload-api": "^2.3.3",
+    "vue-server-renderer": "^2.6.11"
   },
   "devDependencies": {
     "@vue/component-compiler-utils": "^3.0.0",
@@ -41,7 +44,8 @@
     "sass": "^1.18.0",
     "sinon": "^7.3.2",
     "sinon-chai": "^3.3.0",
-    "vue-template-compiler": "^2.6.10"
+    "vue-template-compiler": "^2.6.11",
+    "vuepress": "^1.4.1"
   },
   "alias": {
     "vue": "./node_modules/vue/dist/vue.common.js"

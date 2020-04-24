@@ -6,6 +6,15 @@
 ![npm](https://img.shields.io/npm/v/hisen.svg)
 ## 介绍（Introduction)
 这是基于Vue实现的UI组件库，仅供平时学习所用。
+## TODO
+   
+   - [x] Icon
+   - [x] Button
+   - [x] Input
+   - [x] Grid
+   - [ ] Modal
+   - [x] Toast
+   - [ ] Popover
 ## 开始使用 （Usage)
 ### 1.安装（Installation)
 ```
@@ -40,13 +49,13 @@ npm i --save hisen
 使用本框架前，请在CSS开启border-box
 ```css
 *{
-    box-sizing:boder-box;
+    box-sizing:border-box;
  }
 *::before{
-             box-sizing:boder-box;
+             box-sizing:border-box;
 }
 *::after{
-             box-sizing:boder-box;
+             box-sizing:border-box;
 }
 ```
 ### 4。引入svg symbol
