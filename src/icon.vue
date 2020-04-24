@@ -1,10 +1,11 @@
 <template>
     <svg class="h-icon" aria-hidden="true">
-        <use :xlink:href=`#icon-${name}`></use>
+        <use :xlink:href="`#icon-${name}`"></use>
     </svg>
 </template>
 
 <script>
+    import './svg'
     export default {
         name: "hisen-icon",
         props:['name']
