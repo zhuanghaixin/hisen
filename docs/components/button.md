@@ -4,8 +4,10 @@ title:组件
 # 组件
 
 使用方法
+<ClientOnly>
+   <button-demos></button-demos>
+</ClientOnly>
 
- <button-demos></button-demos>
  
 ```html 
 <template>
