@@ -8,11 +8,20 @@ title:组件
  <button-demos></button-demos>
  
 ```html 
-<h-button>默认按钮</h-button>
-<h-button icon="setting" icon-position="right" >设置按钮</h-button>
-<h-button :loading="true">加载按钮</h-button>
-<h-button disabled>禁用按钮</h-button>
-<h-button icon="setting" icon-position="right" :loading="true" >按钮在右</h-button>
+<template>
+<div>
+    <h-button>默认按钮</h-button>
+    <h-button icon="setting" icon-position="right" >设置按钮</h-button>
+    <h-button :loading="loading1">加载按钮</h-button>
+    <h-button disabled>禁用按钮</h-button>
+    <h-button icon="setting" icon-position="left" :loading="loading2" @change="loading2=!loading2">
+        设置
+    </h-button>
+    <h-button icon="setting" icon-position="right" :loading="loading3" @change="loading3=!loading3">
+        设置
+    </h-button>
+</div>
+</template>
 ```
 
 
