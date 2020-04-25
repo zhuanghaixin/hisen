@@ -1,5 +1,6 @@
 module.exports = {
     title: 'Hisen UI',
+    base:'/hisen/',
     description: '一个基于Vue的UI组件库',
     themeConfig: {
         logo: '/assets/img/logo.png',
