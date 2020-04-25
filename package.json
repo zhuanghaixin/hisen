@@ -4,8 +4,8 @@
   "description": "这是一个UI框架",
   "main": "dist/index.js",
   "scripts": {
-    "start": "parcel index.html --no-cache",
-    "dev-test": "parcel watch test/* --no-cache & karma start",
+    "start": "./node_modules/.bin/parcel index.html --no-cache",
+    "dev-test": "./node_modules/.bin/parcel watch test/* --no-cache & karma start",
     "test": "parcel build test/* --no-minify && karma start --single-run",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs"
