@@ -31,7 +31,7 @@ new Vue({
     },
     methods:{
         inputChange:function (e) {
-            console.log(e.target.value)
+            console.log(e)
         }
     }
 })

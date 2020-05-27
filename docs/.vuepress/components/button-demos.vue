@@ -1,5 +1,5 @@
 <template>
-<div>
+<div style="padding-top: 16px;">
     <h-button>默认按钮</h-button>
     <h-button icon="setting" icon-position="right" >设置按钮</h-button>
     <h-button :loading="loading1">加载按钮</h-button>
@@ -16,7 +16,7 @@
 <script>
     import Button from '../../../src/button.vue'
     export default {
-        name: "button-demos.vue",
+        name: "button-demos",
         components:{
             'h-button':Button,
         },
