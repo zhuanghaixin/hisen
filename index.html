@@ -43,6 +43,7 @@
 </style>
 <body>
 <div id="app">
+
     <h-row>
         <h-col span="23" offset="1" :narrow-pc="{span:12,offset:12 }">
             <div class="demo"></div>
@@ -132,9 +133,11 @@
         <h-input value="xx" v-model="message"></h-input>
         <p>{{message}}</p>
     </div>
+<!--    Input-->
     <div class="box">
         <h-input value="张三" error="姓名不能少于两个字" @change="inputChange"></h-input>
     </div>
+<!--    Button-->
     <div class="box">
         <h-button :loading="loading1" @change="loading1=!loading1">
             设置
