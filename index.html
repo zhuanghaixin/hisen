@@ -39,9 +39,25 @@
         margin: 20px;
     }
     .demo{
-        border:1px solid #666;
+        /*border:1px solid #666;*/
         min-height:100px;
     }
+    .sider {
+        background: #d5dce5;
+        width: 200px;
+    }
+    .header{
+        background:#b5c0cf;
+        height: 100px;
+    }
+    .content{
+        background:#eaeef2;
+    }
+    .footer{
+        background:#ccc;
+        height: 50px;
+    }
+
 
 
 </style>
@@ -53,23 +69,23 @@
 <!--        <h-content class="demo">Content</h-content>-->
 <!--        <h-footer class="demo">Footer</h-footer>-->
 <!--    sider布局-->
-    <h-layout style="height:100vh">
-        <h-header class="demo">Header</h-header>
-        <h-layout>
-            <h-sider class="demo">Sider</h-sider>
-            <h-content class="demo">Content</h-content>
-        </h-layout>
-        <h-footer class="demo">Footer</h-footer>
-    </h-layout>
-<!--    &lt;!&ndash;    sider布局 放外面&ndash;&gt;-->
 <!--    <h-layout style="height:100vh">-->
-<!--        <h-sider class="demo">Sider</h-sider>-->
-<!--        <h-layout class="demo">-->
-<!--            <h-header class="demo">Header</h-header>-->
-
+<!--        <h-header class="demo">Header</h-header>-->
+<!--        <h-layout>-->
+<!--            <h-sider class="demo">Sider</h-sider>-->
 <!--            <h-content class="demo">Content</h-content>-->
-<!--            <h-footer class="demo">Footer</h-footer>-->
 <!--        </h-layout>-->
+<!--        <h-footer class="demo">Footer</h-footer>-->
+<!--    </h-layout>-->
+    <!--    sider布局 放外面-->
+    <h-layout style="height:100vh">
+        <h-sider class="demo">Sider</h-sider>
+        <h-layout class="demo">
+            <h-header class="demo">Header</h-header>
+
+            <h-content class="demo">Content</h-content>
+            <h-footer class="demo">Footer</h-footer>
+        </h-layout>
 
 <!--    </h-layout>-->
     <!--    <h-row>-->
