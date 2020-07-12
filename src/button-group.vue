@@ -6,7 +6,7 @@
 
 <script>
     export default {
-        name: "hisen-button-group",
+        name: "HisenButtonGroup",
         mounted() {
             console.log(this.$el.children);
             for (let node of this.$el.children) {

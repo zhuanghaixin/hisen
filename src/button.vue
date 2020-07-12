@@ -18,7 +18,7 @@
     import Icon from './icon'
 
     export default {
-        name: "hisen-button",
+        name: "HisenButton",
         components: {
             'h-icon': Icon
         },

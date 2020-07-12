@@ -6,7 +6,7 @@
 
 <script>
     export default {
-        name: "hisen-row",
+        name: "HisenRow",
         props: {
             gutter: {
                 type: [Number, String]

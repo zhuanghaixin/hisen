@@ -1,17 +1,17 @@
 <template>
-<div class="footer">
+<div class="header">
     <slot></slot>
 </div>
 </template>
 
 <script>
     export default {
-        name: "HisenFooter"
+        name: "HisenHeader"
     }
 </script>
 
 <style scoped>
-.footer{
+.header{
 
 }
 </style>

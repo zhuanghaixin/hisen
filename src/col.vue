@@ -20,7 +20,7 @@
         return valid
     }
     export default {
-        name: "hisen-col",
+        name: "HisenCol",
         props: {
             span: {
                 type: [Number, String],

@@ -19,7 +19,7 @@
     import Icon from './icon'
 
     export default {
-        name: "hisen-input",
+        name: "HisenInput",
         components: {
             'h-icon': Icon
         },
