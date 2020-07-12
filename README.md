@@ -11,7 +11,7 @@
    - [x] Button
    - [x] Input
    - [x] Grid
-   - [ ] Layout
+   - [x] Layout
    - [ ] Modal
    - [x] Toast
    - [ ] Popover
