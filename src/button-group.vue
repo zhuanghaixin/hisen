@@ -11,7 +11,7 @@
             console.log(this.$el.children);
             for (let node of this.$el.children) {
                 if (node.nodeName.toLowerCase() !== 'button') {
-                    console.warn(`h-button-group的子元素应该是g-button,而你的子元素是${node.nodeName.toLowerCase()}`)
+                    console.warn(`h-button-group的子元素应该是h-button,而你的子元素是${node.nodeName.toLowerCase()}`)
                 }
              }
         }

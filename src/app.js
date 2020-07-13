@@ -10,6 +10,8 @@ import Sider from './sider'
 import Header from './header'
 import Footer from './footer'
 import Content from './content'
+import Toast from './toast.vue'
+import plugin from './plugin'
 
 Vue.component('h-button', Button)
 Vue.component('h-icon', Icon)
@@ -22,6 +24,8 @@ Vue.component('h-sider',Sider)
 Vue.component('h-footer',Footer)
 Vue.component('h-content',Content)
 Vue.component('h-header',Header)
+Vue.component('h-toast',Toast)
+Vue.use(plugin)
 new Vue({
     el: '#app',
     data: {
@@ -31,6 +35,7 @@ new Vue({
         message:''
     },
     created(){
+        // this.$toast('我是message')
         setTimeout(()=>{
             let event = new Event('change');
             let inputElement = this.$el.querySelector('input')
@@ -39,6 +44,9 @@ new Vue({
         },3000)
     },
     methods:{
+        showToast(){
+            this.$toast('我是toast')
+        },
         inputChange:function (e) {
             console.log(e)
         }
