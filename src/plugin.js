@@ -1,21 +1,26 @@
 import Toast from './toast'
 
+let currentToast
 export default {
     install(Vue,options){
         Vue.prototype.$toast=function(message,toastOptions){
-            let Constructor=Vue.extend(Toast)
-            let toast=new Constructor({
-                propsData:{
-                    closeButton:toastOptions.closeButton,
-                    position:toastOptions.position,
-                    autoClose:toastOptions.autoClose,
-                    autoCloseDelay:toastOptions.autoCloseDelay
-                }
-
-            })
-            toast.$slots.default=[message]
-            toast.$mount()
-            document.body.appendChild(toast.$el)
+            if(currentToast){
+                currentToast.close()
+            }
+                currentToast= createToast({Vue,message,propsData:toastOptions})
+                console.log(currentToast)
         }
     }
+}
+
+//  新建一个Toast
+function createToast({Vue,message,propsData}){
+    let Constructor=Vue.extend(Toast)
+    let toast=new Constructor({
+        propsData
+    })
+    toast.$slots.default=[message]
+    toast.$mount()
+    document.body.appendChild(toast.$el)
+    return  toast
 }
