@@ -99,6 +99,18 @@
     $toast-min-height: 40px;
     $toast-bg: rgba(0, 0, 0, 0.74);
     $toast-color: #fff;
+    @keyframes fade-in {
+        0% {
+            opacity:0;
+            transform:translate(-50%,100%);
+        }
+        100%{
+            opacity:1;
+            transform:translate(-50%,0%);
+
+        }
+    }
+
     .toast {
         /*border:1px solid red;*/
         position: fixed;
@@ -112,27 +124,34 @@
         background: $toast-bg;
         box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.50);
         color: $toast-color;
-        .message{
-            padding:16px;
+        animation:fade-in 1s;
+
+        .message {
+            padding: 16px;
         }
-        .line{
+
+        .line {
             height: 100%;
             border-left: 1px solid #666;
         }
-        .close{
+
+        .close {
             padding: 0 16px;
-            cursor:pointer;
-            flex-shrinK:0;
+            cursor: pointer;
+            flex-shrinK: 0;
         }
-        &.position-top{
-            top:0;
+
+        &.position-top {
+            top: 0;
         }
-        &.position-middle{
-            top:50%;
-            transform: translate(-50%,-50%);
+
+        &.position-middle {
+            top: 50%;
+            transform: translate(-50%, -50%);
         }
-        &.position-bottom{
-            bottom:0;
+
+        &.position-bottom {
+            bottom: 0;
         }
     }
 </style>
