@@ -43,9 +43,21 @@ new Vue({
             console.log('hi')
         },3000)
     },
+
     methods:{
         showToast(){
-            this.$toast('我是toast')
+            this.$toast('很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字watching',
+                {
+                    closeButton:{
+                        text:'知道了',
+                        callback(toast){
+                            console.log(toast)
+                            toast.log()
+                            console.log('用户知道了')
+                        }
+                    }
+            }
+            )
         },
         inputChange:function (e) {
             console.log(e)

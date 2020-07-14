@@ -1,7 +1,11 @@
 <template>
-    <div class="toast">
-        <slot></slot>
-        <div class="line"></div>
+    <div class="toast" ref="wrapper">
+            <div class="message">
+                <slot v-if="!enableHtml"></slot>
+                <div  v-else v-html="$slots.default[0]"></div>
+            </div>
+
+        <div class="line" ref="line"></div>
         <span class="close" v-if="closeButton" @click="onClickClose">
             {{closeButton.text}}
         </span>
@@ -18,19 +22,20 @@
             },
             autoCloseDelay: {
                 type: Number,
-                default: 5
+                default: 500
             },
             closeButton: {
                 type: Object,
                 default(){
                     return {
                         text: '关闭',
-                        callback: (toast) => {
-                            console.log(11111)
-                            toast.close()
-                        }
+                        callback: undefined
                     }
                 }
+            },
+            enableHtml:{
+                type:Boolean,
+                default:false
             }
             // position:{
             //     type:String,
@@ -41,20 +46,39 @@
             console.log(this.closeButton)
         },
         mounted() {
-            if (this.autoClose) {
-                setTimeout(() => {
-                    this.close()
-                }, this.autoCloseDelay * 1000)
-            }
+            this.updateStyle()
+            this.execAutoClose()
+
         },
         methods: {
+            //多少秒关闭
+            execAutoClose(){
+                if (this.autoClose) {
+                    setTimeout(() => {
+                        this.close()
+                    }, this.autoCloseDelay * 1000)
+                }
+            },
+            // 样式重置（高度）
+            updateStyle(){
+                this.$nextTick(() => {
+                    console.log(this.$refs.wrapper.getBoundingClientRect().height)
+                    this.$refs.line.style.height=`${this.$refs.wrapper.getBoundingClientRect().height}px`
+                })
+            },
             close() {
                 this.$el.remove()
                 this.$destroy()
             },
             onClickClose(){
                 this.close()
-                this.closeButton.callback()
+                if(this.closeButton && typeof this.closeButton.callback==='function'){
+                    this.closeButton.callback(this)  //toast实例
+                }
+
+            },
+            log(){
+                console.log('测试')
             }
         }
     }
@@ -62,7 +86,7 @@
 
 <style scoped lang="scss">
     $font-size: 14px;
-    $toast-height: 40px;
+    $toast-min-height: 40px;
     $toast-bg: rgba(0, 0, 0, 0.74);
     $toast-color: #fff;
     .toast {
@@ -70,7 +94,7 @@
         position: fixed;
         top: 0;
         left: 50%;
-        height: $toast-height;
+        min-height: $toast-min-height;
         transform: translateX(-50%);
         font-size: $font-size;
         line-height: 1.8;
@@ -79,6 +103,9 @@
         background: $toast-bg;
         box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.50);
         color: $toast-color;
+        .message{
+            padding:16px;
+        }
         .line{
             height: 100%;
             border-left: 1px solid #666;
@@ -87,6 +114,7 @@
         .close{
             padding-left:16px;
             cursor:pointer;
+            flex-shrinK:0;
         }
     }
 </style>
