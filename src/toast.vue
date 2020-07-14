@@ -26,32 +26,32 @@
             },
             closeButton: {
                 type: Object,
-                default(){
+                default() {
                     return {
                         text: '关闭',
                         callback: undefined
                     }
                 }
             },
-            enableHtml:{
-                type:Boolean,
-                default:false
+            enableHtml: {
+                type: Boolean,
+                default: false
             },
-            position:{
-                type:String,
-                default:'top',
-                validator(value){
-                    return ['top','middle','bottom'].indexOf(value)!==-1
+            position: {
+                type: String,
+                default: 'top',
+                validator(value) {
+                    return ['top', 'middle', 'bottom'].indexOf(value) !== -1
                 }
 
             }
         },
-        computed:{
-            toastClass(){
+        computed: {
+            toastClass() {
                 return [`position-${this.position}`]
             }
         },
-        created(){
+        created() {
             console.log(this.closeButton)
         },
         mounted() {
@@ -61,7 +61,7 @@
         },
         methods: {
             //多少秒关闭
-            execAutoClose(){
+            execAutoClose() {
                 if (this.autoClose) {
                     setTimeout(() => {
                         this.close()
@@ -69,24 +69,25 @@
                 }
             },
             // 样式重置（高度）
-            updateStyle(){
+            updateStyle() {
                 this.$nextTick(() => {
                     console.log(this.$refs.wrapper.getBoundingClientRect().height)
-                    this.$refs.line.style.height=`${this.$refs.wrapper.getBoundingClientRect().height}px`
+                    this.$refs.line.style.height = `${this.$refs.wrapper.getBoundingClientRect().height}px`
                 })
             },
             close() {
                 this.$el.remove()
+                this.$emit('close')
                 this.$destroy()
             },
-            onClickClose(){
+            onClickClose() {
                 this.close()
-                if(this.closeButton && typeof this.closeButton.callback==='function'){
+                if (this.closeButton && typeof this.closeButton.callback === 'function') {
                     this.closeButton.callback(this)  //toast实例
                 }
 
             },
-            log(){
+            log() {
                 console.log('测试')
             }
         }
