@@ -46,7 +46,7 @@ new Vue({
 
     methods:{
         showToast(){
-            this.$toast('很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字watching',
+            this.$toast('很多文字很多文字很多',
                 {
                     closeButton:{
                         text:'知道了',
@@ -55,7 +55,8 @@ new Vue({
                             toast.log()
                             console.log('用户知道了')
                         }
-                    }
+                    },
+                    position:'middle'
             }
             )
         },

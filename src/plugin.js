@@ -7,7 +7,9 @@ export default {
             let toast=new Constructor({
                 propsData:{
                     closeButton:toastOptions.closeButton,
-                    // autoCloseDelay:toastOptions.autoCloseDelay
+                    position:toastOptions.position,
+                    autoClose:toastOptions.autoClose,
+                    autoCloseDelay:toastOptions.autoCloseDelay
                 }
 
             })
