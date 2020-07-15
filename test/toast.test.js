@@ -22,12 +22,18 @@ describe('toast', () => {
                 }
             }).$mount(div)
             //1.5秒中之后，期待toast组件不在body中（因为自动关闭）
-            setTimeout(()=>{
-                console.log('document.body.contains(vm.$el)')
-                console.log(document.body.contains(vm.$el))
-                expect(document.body.contains(vm.$el)).to.eq(false)
-                done()
-            },1500)
+            // setTimeout(()=>{
+            //     console.log('document.body.contains(vm.$el)')
+            //     console.log(document.body.contains(vm.$el))
+            //     expect(document.body.contains(vm.$el)).to.eq(false)
+            //     done()
+            // },1500)
+
+            //     [优化] 测试toast关闭以后body中不含有toast组件
+            vm.$on('close',()=>{
+                    expect(document.body.contains(vm.$el)).to.eq(false)
+                    done()
+            })
         })
     })
 
