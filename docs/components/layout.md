@@ -12,7 +12,7 @@ title: Layout
     <div>
             <h-layout style="height:100vh">
                 <h-header class="demo">Header</h-header>
-                <h-content class="demo">Content</h-content>
+                <h-content class="demo">Content</h-content> 
                 <h-footer class="demo">Footer</h-footer>
             </h-layout>
     </div>
