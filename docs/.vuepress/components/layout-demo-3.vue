@@ -13,10 +13,10 @@
 
 <script>
     import Layout from '../../../src/layout.vue'
-    import Sider from '../../../src/Sider.vue'
-    import Footer from '../../../src/Footer.vue'
-    import Header from '../../../src/Header.vue'
-    import Content from '../../../src/Content.vue'
+    import Sider from '../../../src/sider.vue'
+    import Footer from '../../../src/footer.vue'
+    import Header from '../../../src/header.vue'
+    import Content from '../../../src/content.vue'
 
     export default {
         name: "layout-demo-3",

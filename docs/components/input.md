@@ -6,7 +6,7 @@ title:Input
 ##  基础用法
 
 <ClientOnly>
-   <input-demo-1></input-demo-1>
+  <input-demo-1></input-demo-1>
 </ClientOnly>
 
  

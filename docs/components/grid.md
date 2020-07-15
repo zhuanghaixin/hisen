@@ -141,7 +141,7 @@ title: Grid
 ## 设置空隙
 
 <ClientOnly>
-   <grid-demo-3></grid-demo-3>
+  <grid-demo-3></grid-demo-3>
 </ClientOnly>
 
 
@@ -208,7 +208,7 @@ title: Grid
 ## 响应式布局
 
 <ClientOnly>
-   <grid-demo-4></grid-demo-4>
+  <grid-demo-4></grid-demo-4>
 </ClientOnly>
 
 ```html
