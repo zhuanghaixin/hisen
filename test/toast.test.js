@@ -17,8 +17,7 @@ describe('toast', () => {
             const Constructor=Vue.extend(Toast)
             const vm = new Constructor({
                 propsData:{
-                    autoClose: true,
-                    autoCloseDelay:1
+                    autoClose: 1,
                 }
             }).$mount(div)
             //1.5秒中之后，期待toast组件不在body中（因为自动关闭）
@@ -34,6 +33,47 @@ describe('toast', () => {
                     expect(document.body.contains(vm.$el)).to.eq(false)
                     done()
             })
+        })
+        it('接受 closeButton',()=>{
+            const callback = sinon.fake();
+            const div=document.createElement('div')
+            document.body.append(div)
+            const Constructor=Vue.extend(Toast)
+            const vm = new Constructor({
+                propsData:{
+                    closeButton:{
+                        text:'关闭吧',
+                        callback
+
+                    }
+                }
+            }).$mount(div)
+            console.log(vm.$el.outerHTML)
+            let closeButton=vm.$el.querySelector('.close')
+            expect(closeButton.textContent.trim()).to.eq('关闭吧')
+            closeButton.click()
+            expect(callback).to.have.been.called
+        })
+        it('接受 enableHtml',()=>{
+            const Constructor=Vue.extend(Toast)
+            const vm = new Constructor({
+                propsData:{enableHtml:true}
+            })
+            vm.$slots.default=['<strong id="test">Hi</strong>']
+            vm.$mount()
+            console.log(vm.$el.outerHTML)
+            let strong=vm.$el.querySelector('#test')
+            expect(strong).to.be.ok
+            console.log(1111111)
+        })
+        it('接受 position',()=>{
+            const Constructor=Vue.extend(Toast)
+            const vm = new Constructor({
+                propsData:{position:'bottom'}
+            })
+            vm.$mount()
+            expect(vm.$el.classList.contains('position-bottom')).to.equal(true)
+            console.log(1111111)
         })
     })
 

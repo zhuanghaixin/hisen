@@ -67,7 +67,8 @@ new Vue({
                             console.log('用户知道了')
                         }
                     },
-                    position:position
+                    position:position,
+                    autoClose:3
             }
             )
         },
