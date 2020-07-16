@@ -123,22 +123,22 @@
 <!--                <h-input :value="values" :error="error" @change="inputChange"></h-input>-->
 <!--            </div>-->
 <!--        &lt;!&ndash;    Button&ndash;&gt;-->
-<!--            <div class="box">-->
-<!--                <h-button :loading="loading1" @change="loading1=!loading1">-->
-<!--                    设置-->
-<!--                </h-button>-->
-<!--                <h-button icon="setting" icon-position="left" :loading="loading2" @change="loading2=!loading2">-->
-<!--                    设置-->
-<!--                </h-button>-->
-<!--                <h-button icon="setting" icon-position="right" :loading="loading3" @change="loading3=!loading3">-->
-<!--                    设置-->
-<!--                </h-button>-->
-<!--                <h-button-group>-->
-<!--                    <h-button icon="left">上一页</h-button>-->
-<!--                    <h-button>更多</h-button>-->
-<!--                    <h-button icon="right" icon-position="right">下一页</h-button>-->
-<!--                </h-button-group>-->
-<!--            </div>-->
+            <div class="box">
+                <h-button :loading="loading1" @change="loading1=!loading1">
+                    设置
+                </h-button>
+                <h-button icon="setting" icon-position="left" :loading="loading2" @change="loading2=!loading2">
+                    设置
+                </h-button>
+                <h-button icon="setting" icon-position="right" :loading="loading3" @change="loading3=!loading3">
+                    设置
+                </h-button>
+                <h-button-group>
+                    <h-button icon="left">上一页</h-button>
+                    <h-button>更多</h-button>
+                    <h-button icon="right" icon-position="right">下一页</h-button>
+                </h-button-group>
+            </div>
     </div>
 </template>
 
