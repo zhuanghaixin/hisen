@@ -1,55 +1,35 @@
 {
   "name": "hisen",
-  "version": "0.0.7",
+  "version": "0.1.0",
   "description": "这是一个UI框架",
-  "main": "dist/index.js",
+  "private": true,
   "scripts": {
-    "start": "./node_modules/.bin/parcel index.html --no-cache",
-    "dev-test": "./node_modules/.bin/parcel watch test/* --no-cache & karma start",
-    "test": "parcel build test/* --no-minify && karma start --single-run",
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build --target lib --name hisen src/index.js",
+    "test": "cross-env BABEL_ENV=test karma start --single-run",
+    "test:unit": "cross-env BABEL_ENV=test karma start",
+    "test:unit:old": "vue-cli-service test:unit",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/zhuanghaixin/hisen.git"
-  },
-  "keywords": [
-    "vue",
-    "ui"
-  ],
-  "author": "zhuanghaixin",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/zhuanghaixin/hisen/issues"
-  },
-  "homepage": "https://github.com/zhuanghaixin/hisen#readme",
   "dependencies": {
-    "chai-spies": "^1.0.0",
-    "vue": "^2.6.11",
-    "vue-hot-reload-api": "^2.3.3",
-    "vue-server-renderer": "^2.6.11"
+    "core-js": "^3.6.5",
+    "vue": "^2.6.11"
   },
   "devDependencies": {
-    "@vue/component-compiler-utils": "^3.0.0",
-    "chai": "^4.2.0",
-    "karma": "^4.1.0",
-    "karma-chai": "^0.1.0",
-    "karma-chai-spies": "^0.1.4",
-    "karma-chrome-launcher": "^2.2.0",
-    "karma-mocha": "^1.3.0",
-    "karma-sinon-chai": "^2.0.2",
-    "mocha": "^6.1.4",
-    "node-sass": "^4.14.0",
-    "parcel-bundler": "^1.12.4",
-    "sass": "^1.18.0",
+    "@vue/cli-plugin-babel": "~4.4.0",
+    "@vue/cli-plugin-unit-mocha": "~4.4.0",
+    "@vue/cli-service": "~4.4.0",
+    "@vue/test-utils": "^1.0.3",
+    "chai": "^4.1.2",
+    "node-sass": "^4.12.0",
     "sass-loader": "^8.0.2",
-    "sinon": "^7.3.2",
-    "sinon-chai": "^3.3.0",
     "vue-template-compiler": "^2.6.11",
-    "vuepress": "^1.4.1"
+    "vuepress": "^1.5.2"
   },
-  "alias": {
-    "vue": "./node_modules/vue/dist/vue.common.js"
-  }
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
 }
