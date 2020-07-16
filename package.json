@@ -8,7 +8,6 @@
     "build": "vue-cli-service build --target lib --name hisen src/index.js",
     "test": "karma start --single-run",
     "test:unit": "karma start",
-    "test:unit:old": "vue-cli-service test:unit --watch",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs"
   },
