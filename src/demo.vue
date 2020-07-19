@@ -1,8 +1,26 @@
 <template>
     <div>
-        <h-button @change="$toast('点击弹出提示',{autoClose:50})">上方弹出</h-button>
-        <h-button @change="$toast('点击弹出提示', {position:'middle'})">中间弹出</h-button>
-        <h-button @change="$toast('点击弹出提示', {position:'bottom'})">下方弹出</h-button>
+<!-- Tabs-->
+     <h-tabs :selected.sync="selectedTab">
+         <h-tabs-head>
+             <template v-slot:actions>
+                 <button>设置</button>
+             </template>
+             <h-tabs-item name="woman">
+                 <h-icon name="setting"></h-icon>
+                 美女</h-tabs-item>
+             <h-tabs-item name="fiance" disabled>财经</h-tabs-item>
+             <h-tabs-item name="sports">体育</h-tabs-item>
+         </h-tabs-head>
+         <h-tabs-body>
+             <h-tabs-pane name="woman">美女咨询</h-tabs-pane>
+             <h-tabs-pane name="fiance">财经咨询</h-tabs-pane>
+             <h-tabs-pane name="sports">体育咨询</h-tabs-pane>
+         </h-tabs-body>
+     </h-tabs>
+<!--        <h-button @change="$toast('点击弹出提示',{autoClose:50})">上方弹出</h-button>-->
+<!--        <h-button @change="$toast('点击弹出提示', {position:'middle'})">中间弹出</h-button>-->
+<!--        <h-button @change="$toast('点击弹出提示', {position:'bottom'})">下方弹出</h-button>-->
         <!--    上中下布局-->
 <!--            <h-layout style="height:100vh">-->
 <!--                <h-header class="demo">Header</h-header>-->
@@ -123,22 +141,22 @@
 <!--                <h-input :value="values" :error="error" @change="inputChange"></h-input>-->
 <!--            </div>-->
 <!--        &lt;!&ndash;    Button&ndash;&gt;-->
-            <div class="box">
-                <h-button :loading="loading1" @change="loading1=!loading1">
-                    设置
-                </h-button>
-                <h-button icon="setting" icon-position="left" :loading="loading2" @change="loading2=!loading2">
-                    设置
-                </h-button>
-                <h-button icon="setting" icon-position="right" :loading="loading3" @change="loading3=!loading3">
-                    设置
-                </h-button>
-                <h-button-group>
-                    <h-button icon="left">上一页</h-button>
-                    <h-button>更多</h-button>
-                    <h-button icon="right" icon-position="right">下一页</h-button>
-                </h-button-group>
-            </div>
+<!--            <div class="box">-->
+<!--                <h-button :loading="loading1" @change="loading1=!loading1">-->
+<!--                    设置-->
+<!--                </h-button>-->
+<!--                <h-button icon="setting" icon-position="left" :loading="loading2" @change="loading2=!loading2">-->
+<!--                    设置-->
+<!--                </h-button>-->
+<!--                <h-button icon="setting" icon-position="right" :loading="loading3" @change="loading3=!loading3">-->
+<!--                    设置-->
+<!--                </h-button>-->
+<!--                <h-button-group>-->
+<!--                    <h-button icon="left">上一页</h-button>-->
+<!--                    <h-button>更多</h-button>-->
+<!--                    <h-button icon="right" icon-position="right">下一页</h-button>-->
+<!--                </h-button-group>-->
+<!--            </div>-->
     </div>
 </template>
 
@@ -158,6 +176,12 @@
     import Toast from './toast.vue'
     import Vue from 'vue'
     Vue.use(plugin)
+    import Tabs from './tabs.vue'
+    import TabsHead from './tabs-head'
+    import TabsBody from './tabs-body'
+    import TabsItem from './tabs-item'
+    import TabsPane from './tabs-pane'
+
     export default {
         name: "demo",
         components:{
@@ -171,7 +195,11 @@
             'h-sider':Sider,
             'h-footer':Footer,
             'h-content':Content,
-
+            'h-tabs':Tabs,
+            'h-tabs-head':TabsHead,
+            'h-tabs-body':TabsBody,
+            'h-tabs-item':TabsItem,
+            'h-tabs-pane':TabsPane
         },
         data(){
             return{
@@ -180,7 +208,8 @@
                 loading3: true,
                 message:'',
                 error:'姓名不能少于两个字',
-                values:'张三'
+                values:'张三',
+                selectedTab:'sports'
             }
 
         },

@@ -12,6 +12,11 @@ import Footer from './footer'
 import Content from './content'
 import Toast from './toast.vue'
 import plugin from './plugin'
+import Tabs from './tabs.vue'
+import TabsHeader from './tabs-head'
+import TabsBody from './tabs-body'
+import TabsItem from './tabs-item'
+import TabsPane from './tabs-pane'
 
 Vue.component('h-button', Button)
 Vue.component('h-icon', Icon)
@@ -26,6 +31,11 @@ Vue.component('h-content',Content)
 Vue.component('h-header',Header)
 Vue.component('h-toast',Toast)
 Vue.use(plugin)
+Vue.component('h-tabs',Tabs)
+Vue.component('h-tabs-head',TabsHead)
+Vue.component('h-tabs-body',TabsBody)
+Vue.component('h-tabs-item',TabsItem)
+Vue.component('h-tabs-pane',TabsPane)
 new Vue({
     el: '#app',
     data: {
