@@ -6,7 +6,13 @@
 
 <script>
     export default {
-        name: "HisenTabsBody"
+        name: "HisenTabsBody",
+        inject: ['eventBus'],
+        created(){
+            //爷爷給爸爸到eventBus
+            // console.log('爷爷給爸爸到eventBus')
+            // console.log(this.eventBus)
+        }
     }
 </script>
 

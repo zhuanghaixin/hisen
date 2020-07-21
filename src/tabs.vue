@@ -6,6 +6,7 @@
 </template>
 
 <script>
+    import Vue from 'vue'
     export default {
         name: "HisenTabs",
         props:{
@@ -23,7 +24,18 @@
 
         },
         created(){
-            this.$emit('update:selected','xxx')
+            // console.log(this.eventBus)
+            // this.$emit('update:selected','xxx')
+        },
+        provide(){
+           return{
+               eventBus:this.eventBus
+           }
+        },
+        data(){
+            return{
+                eventBus:new Vue()
+            }
         }
     }
 </script>

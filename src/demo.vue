@@ -2,7 +2,7 @@
     <div>
 <!-- Tabs-->
      <h-tabs :selected.sync="selectedTab">
-         <h-tabs-head>
+         <h-tabs-head class="frank">
              <template v-slot:actions>
                  <button>设置</button>
              </template>
@@ -228,7 +228,7 @@
     }
 </script>
 
-<style scoped lang="scss">
+<style scoped lang="scss"> 
     * {
         padding: 0;
         margin: 0;
