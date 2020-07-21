@@ -1,7 +1,7 @@
 <template>
     <div>
 <!-- Tabs-->
-     <h-tabs :selected.sync="selectedTab">
+     <h-tabs :selected.sync="selectedTab" @update:selected="yyy">
          <h-tabs-head class="frank">
              <template v-slot:actions>
                  <button>设置</button>
@@ -215,6 +215,9 @@
         },
 
         methods:{
+            yyy(data){
+                console.log(data)
+            },
             inputChange:function (e) {
                 if(e.length>=3){
                     this.values=e
@@ -228,7 +231,7 @@
     }
 </script>
 
-<style scoped lang="scss"> 
+<style scoped lang="scss">
     * {
         padding: 0;
         margin: 0;

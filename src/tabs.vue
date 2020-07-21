@@ -25,7 +25,9 @@
         },
         created(){
             // console.log(this.eventBus)
-            // this.$emit('update:selected','xxx')
+            // this.$emit('update:selected','这是this.$emit出来的数据')
+            //另一个事件系统
+            this.eventBus.$emit('update:selected','这是this.eventBus.$emit出来的数据')
         },
         provide(){
            return{
