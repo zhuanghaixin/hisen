@@ -16,6 +16,7 @@
     }
 </script>
 
-<style scoped>
-
+<style scoped lang="scss">
+.tabs-body{
+}
 </style>
