@@ -1,19 +1,28 @@
 <template>
     <div style="padding-top:100px;padding-left:100px">
         <!--        Popover-->
-        <h-popover>
-            <template v-slot:content>
-                <div>popover 内容</div>
-            </template>
-            <button>点我</button>
-        </h-popover>
+        <div style="height:1000px;border:10px solid #0f0"></div>
+        <div style="overflow:hidden; border:1px solid red" @click="aaa">
+            <h-popover>
+                <template v-slot:content>
+                    <div>popover 内容</div>
+                </template>
+                <button>点我</button>
+            </h-popover>
+            <h-popover>
+                <template v-slot:content>
+                    <div>popover 内容</div>
+                </template>
+                <button>点我</button>
+            </h-popover>
+        </div>
         <!--        Popover-->
-        <h-popover>
-            <template v-slot:content>
-                <div>popover 内容</div>
-            </template>
-            <button>点我</button>
-        </h-popover>
+<!--        <h-popover>-->
+<!--            <template v-slot:content>-->
+<!--                <div>popover 内容</div>-->
+<!--            </template>-->
+<!--            <button>点我</button>-->
+<!--        </h-popover>-->
         <!--        <div ref="popover"></div>-->
         <!--        <button v-popover="$refs.popover"></button>-->
 
@@ -236,6 +245,9 @@
         },
 
         methods: {
+            aaa(){
+                console.log('aaa')
+            },
             yyy(data) {
                 console.log(data)
             },
