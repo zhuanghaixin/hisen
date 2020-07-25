@@ -1,9 +1,9 @@
 <template>
-    <div class="popover" @click.stop="xx">
-        <div ref="contentWrapper" class="content-wrapper" v-if="visible" @click.stop>
+    <div class="popover" @click="onClick" ref="popover">
+        <div ref="contentWrapper" class="content-wrapper" v-if="visible">
             <slot name="content"></slot>
         </div>
-       <span ref="triggerWrapper">
+        <span ref="triggerWrapper">
             <slot></slot>
        </span>
     </div>
@@ -22,31 +22,67 @@
             // document.body.appendChild(this.$refs.contentWrapper)}
         },
         methods: {
-            xx() {
-                this.visible = !this.visible
-                console.log('切换visible')
-                if (this.visible === true) {
-                    this.$nextTick(()=>{
-                        document.body.appendChild(this.$refs.contentWrapper);
-                        let {width,height,top,left} =this.$refs.triggerWrapper.getBoundingClientRect()
-                        this.$refs.contentWrapper.style.left=left+window.scrollX+'px'
-                        this.$refs.contentWrapper.style.top=top+window.scrollY+'px'
-                    })
-
-                    console.log('新增document click监听器')
-                    let eventHandler = () => {
-                        console.log('点击body就关闭popover')
-                        this.visible = false
-                        console.log('document隐藏popover')
-                        console.log('删除监听器')
-                        //如果不移除事件的化，监听器会叠加
-                        document.removeEventListener('click', eventHandler)
-                    }
-                    document.addEventListener('click', eventHandler)
-
+            //内容区定位
+            positionContent() {
+                document.body.appendChild(this.$refs.contentWrapper);
+                let {width, height, top, left} = this.$refs.triggerWrapper.getBoundingClientRect()
+                this.$refs.contentWrapper.style.left = left + window.scrollX + 'px'
+                this.$refs.contentWrapper.style.top = top + window.scrollY + 'px'
+            },
+            onClickDocument(e){
+                console.log('this')
+                console.log(this)
+                if (this.$refs.contentWrapper.contains(e.target)) { //// 这句话解决了点击内容消失的问题
+                    return
                 } else {
-                    console.log('隐藏popover')
+                    this.close()
+
                 }
+            },
+            open() {
+                this.visible=true
+              setTimeout(() => {
+                    this.positionContent()
+                  document.addEventListener('click', this.onClickDocument)
+                })
+            },
+            close(){
+                this.visible = false
+                console.log('关闭')
+                //如果不移除事件的话，监听器会叠加
+                document.removeEventListener('click', this.onClickDocument)
+            },
+            onClick(event) {
+                console.log(event.target)
+                if (this.$refs.triggerWrapper.contains(event.target)) {
+                    // console.log('下面')
+                    // this.visible = !this.visible
+                    if (this.visible === true) {
+                        this.close()
+                    }else{
+                        this.open()
+                        console.log('关闭')
+                    }
+                }
+                // this.visible = !this.visible
+                // if (this.visible === true) {
+                //     this.$nextTick(()=>{
+                //         document.body.appendChild(this.$refs.contentWrapper);
+                //         let {width,height,top,left} =this.$refs.triggerWrapper.getBoundingClientRect()
+                //         this.$refs.contentWrapper.style.left=left+window.scrollX+'px'
+                //         this.$refs.contentWrapper.style.top=top+window.scrollY+'px'
+                //     })
+                //     let eventHandler = () => {
+                //         this.visible = false
+                //         //如果不移除事件的化，监听器会叠加
+                //         document.removeEventListener('click', eventHandler)
+                //         console.log('关闭')
+                //     }
+                //     document.addEventListener('click', eventHandler)
+                //
+                // } else {
+                //     console.log('关闭')
+                // }
             }
         }
     }
@@ -58,9 +94,10 @@
         vertical-align: top;
         position: relative;
     }
+
     .content-wrapper {
         position: absolute;
-        transform:translateY(-100%);
+        transform: translateY(-100%);
         border: 1px solid red;
         box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
     }
